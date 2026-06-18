@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://josselin-mattont.github.io/sitemap.xml
