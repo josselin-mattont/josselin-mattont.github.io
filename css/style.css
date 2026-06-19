@@ -1,0 +1,321 @@
+/* ===========================================================================
+   STYLE DU SITE — Josselin Mattont
+   Direction artistique « manga académique » : gris, noir, blanc, rouge.
+   ⚠️  Vous n'avez normalement pas besoin de modifier ce fichier.
+       Pour changer le contenu, ouvrez plutôt js/content.js
+   =========================================================================== */
+
+/* --- Palette & variables ------------------------------------------------- */
+:root {
+  --red-600: #E1241A;   /* accent principal */
+  --red-700: #B3170F;   /* rouge texte (contraste) */
+  --red-500: #F03A2E;   /* survol */
+  --red-100: #FBE0DE;   /* lavis clair */
+  --ink:     #000000;
+  --ink-800: #1E1E22;
+  --ink-600: #34343B;
+  --grey-500:#5E5E66;
+  --grey-300:#9A9AA0;
+  --grey-200:#DCDCDF;
+  --paper:   #EAEAEC;   /* fond gris clair */
+  --white:   #FFFFFF;
+
+  --max: 1200px;        /* largeur maximale du contenu */
+}
+
+/* --- Bases --------------------------------------------------------------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink-800);
+  font-family: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; }
+a { color: inherit; }
+
+/* Familles typographiques utilitaires */
+.h { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+.k { font-family: "Archivo", sans-serif; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.m { font-family: "IBM Plex Mono", monospace; }
+
+/* Surtitre rouge avec trait */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 11px;
+  font-family: "Archivo", sans-serif; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 13px; color: var(--red-700); margin-bottom: 14px;
+}
+.eyebrow::before { content: ""; width: 36px; height: 3px; background: currentColor; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: 56px; padding-right: 56px; }
+.section-title { font-family: "Archivo", sans-serif; font-weight: 800; letter-spacing: -0.02em; font-size: 38px; color: var(--ink); margin: 0 0 30px; }
+
+section[id], footer[id] { scroll-margin-top: 88px; }
+
+/* --- Barre de navigation (collante) -------------------------------------- */
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; padding: 20px 56px 20px 36px;
+  background: var(--white); border-bottom: 1px solid var(--grey-200);
+  position: sticky; top: 0; z-index: 50;
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-logo {
+  position: relative;
+  width: 38px; height: 38px; display: grid; place-items: center;
+  background: var(--ink); color: var(--white);
+  font-family: "Archivo"; font-weight: 800; font-size: 17px;
+}
+.nav-logo::after {
+  content: ""; position: absolute; left: 20%; right: 20%; bottom: 7px;
+  height: 2px; background: var(--red-600);
+}
+.nav-name { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.02em; font-size: 18px; color: var(--ink); }
+.nav-links { display: flex; align-items: center; gap: 28px; font-size: 13px; font-weight: 500; }
+.nav-links a { text-decoration: none; cursor: pointer; }
+.nav-links a:hover { color: var(--red-700); }
+.nav-cv {
+  display: inline-flex; align-items: center; padding: 9px 16px;
+  background: var(--red-600); color: var(--white) !important;
+  font-family: "Archivo"; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; font-size: 11px; text-decoration: none;
+}
+.nav-cv:hover { background: var(--red-500); }
+/* Bouton menu mobile (caché sur desktop) */
+.nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-burger span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; transition: .2s; }
+
+/* --- Héros --------------------------------------------------------------- */
+.hero { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
+.hero-grid {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 420px; gap: 40px;
+  padding: 76px 56px 44px; align-items: end;
+}
+.hero-text { padding-bottom: 78px; }
+.hero h1 { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.02em; font-size: 62px; line-height: 1.02; color: var(--white); margin: 0; }
+.hero-bio { font-size: 20px; line-height: 1.6; color: #BFBFC4; margin: 24px 0 32px; max-width: 52ch; }
+.hero-bio strong { color: var(--white); }
+.hero .eyebrow { color: var(--red-500); }
+.hero-portrait { position: relative; display: flex; align-items: flex-end; justify-content: center; min-height: 430px; }
+.hero-disc { position: absolute; bottom: 0; width: 380px; height: 380px; border-radius: 50%; background: var(--red-600); }
+.hero-portrait img { position: relative; height: 470px; display: block; }
+
+/* Boutons (laboratoires, profils) */
+.btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.lab-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: "Archivo"; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; font-size: 11px; color: var(--red-500);
+  margin-bottom: 12px;
+}
+.lab-eyebrow span { width: 24px; height: 2px; background: currentColor; flex: none; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 20px; border: 1.5px solid var(--red-600);
+  background: var(--red-600); color: var(--white);
+  font-family: "Archivo"; font-weight: 700; letter-spacing: 0.04em;
+  font-size: 12px; text-decoration: none;
+  transition: background .15s ease, border-color .15s ease;
+}
+.btn:hover { background: var(--red-500); border-color: var(--red-500); }
+
+/* --- Chiffres clés ------------------------------------------------------- */
+.stats {
+  max-width: var(--max); margin: 0 auto; padding: 46px 56px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;
+  border-bottom: 1px solid var(--grey-200);
+}
+.stat-num { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.02em; font-size: 46px; color: var(--ink); line-height: 1; }
+.stat-bar { display: block; width: 32px; height: 3px; background: var(--red-600); margin: 8px 0; }
+.stat-label { font-family: "Archivo"; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; color: var(--ink-800); }
+
+/* --- Sections génériques ------------------------------------------------- */
+.section { padding-top: 64px; padding-bottom: 64px; }
+.section--paper { background: var(--paper); }
+.section--white { background: var(--white); border-top: 1px solid var(--grey-200); border-bottom: 1px solid var(--grey-200); }
+
+/* Cartes (axes) */
+.cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card {
+  background: var(--white); border: 1px solid var(--grey-200);
+  border-top: 4px solid var(--red-600); padding: 26px 28px;
+}
+.card--ink { border-top-color: var(--ink); }
+.card h3 { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.01em; font-size: 22px; color: var(--ink); margin: 0 0 9px; }
+.card p { font-size: 15.5px; line-height: 1.55; margin: 0; color: var(--ink-600); }
+
+/* --- Publications -------------------------------------------------------- */
+.pub {
+  display: grid; grid-template-columns: 80px 1fr auto; gap: 24px;
+  align-items: baseline; padding: 22px 0; border-top: 1px solid var(--grey-200);
+  text-decoration: none;
+}
+.pub:last-child { border-bottom: 1px solid var(--grey-200); }
+.pub-year { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--red-700); }
+.pub-year--soft { color: var(--grey-300); }
+.pub-title { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.01em; display: block; font-size: 21px; color: var(--ink); }
+.pub-source { font-size: 15px; color: var(--grey-500); }
+.pub-link { font-family: "Archivo"; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 11px; color: var(--red-700); white-space: nowrap; }
+.pub-link--soft { color: var(--grey-300); }
+
+/* --- Diffusion (cartes cliquables) --------------------------------------- */
+.diff-card {
+  display: flex; flex-direction: column; background: var(--white);
+  border: 1px solid var(--grey-200); border-top: 4px solid var(--red-600);
+  padding: 28px 30px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease;
+}
+.diff-card--ink { border-top-color: var(--ink); }
+.diff-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.10); }
+/* Cartes avec photo (recherches en cours) — non cliquables */
+.diff-card--photo { padding: 0; }
+.diff-card--photo:hover { transform: none; box-shadow: none; }
+.diff-photo { height: 220px; overflow: hidden; background: var(--ink); }
+.diff-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; }
+.diff-body { padding: 26px 28px; }
+.diff-go--soft { color: var(--grey-500); }
+.diff-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.diff-tag { font-family: "Archivo"; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 11px; color: var(--red-700); background: var(--red-100); padding: 5px 10px; }
+.diff-tag--soft { color: var(--ink-800); background: var(--paper); }
+.diff-go { font-family: "Archivo"; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 11px; color: var(--red-700); }
+.diff-card h3 { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.01em; font-size: 23px; color: var(--ink); margin: 0 0 12px; line-height: 1.15; }
+.diff-card p { font-size: 15px; line-height: 1.55; margin: 0; color: var(--ink-600); text-align: justify; }
+.diff-card--center h3 { text-align: center; }
+
+/* --- Communications ------------------------------------------------------ */
+.comm {
+  display: grid; grid-template-columns: 80px 1fr auto; gap: 24px;
+  align-items: baseline; padding: 20px 0; border-top: 1px solid var(--grey-200);
+}
+.comm:last-child { border-bottom: 1px solid var(--grey-200); }
+.comm-year { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--red-700); }
+.comm-title { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.01em; display: block; font-size: 18px; color: var(--ink); line-height: 1.25; }
+.comm-place { font-size: 14px; color: var(--grey-500); }
+.comm-type { font-family: "Archivo"; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 10px; padding: 4px 9px; white-space: nowrap; }
+.comm-type--int { color: var(--white); background: var(--red-600); }
+.comm-type--nat { color: var(--ink-800); background: var(--grey-200); }
+
+/* --- Responsabilités ----------------------------------------------------- */
+.resp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.resp { background: var(--white); border: 1px solid var(--grey-200); border-top: 4px solid var(--red-600); padding: 26px 26px 28px; }
+.resp:nth-child(2) { border-top-color: var(--ink); }
+.resp:nth-child(3) { border-top-color: var(--ink); }
+.resp h3 { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.01em; font-size: 18px; color: var(--ink); margin: 0 0 14px; }
+.resp ul { margin: 0; padding: 0; list-style: none; }
+.resp li { font-size: 14px; line-height: 1.45; color: var(--ink-600); padding: 9px 0; border-top: 1px solid var(--grey-200); }
+
+/* --- Distinctions -------------------------------------------------------- */
+.distinctions { display: flex; flex-direction: column; }
+.distinction { display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--grey-200); }
+.distinction:last-child { border-bottom: 1px solid var(--grey-200); }
+.distinction-year { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--red-700); }
+.distinction-title { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.01em; font-size: 18px; color: var(--ink); }
+
+/* --- Enseignements ------------------------------------------------------- */
+.sub-label { font-family: "Archivo"; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 12px; color: var(--grey-500); margin-bottom: 14px; }
+.estabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 44px; }
+.estab {
+  display: flex; align-items: center; justify-content: center; height: 108px;
+  background: var(--white); border: 1px solid var(--grey-200);
+  border-bottom: 3px solid var(--red-600); padding: 20px 24px;
+}
+.estab img { max-height: 100%; max-width: 100%; object-fit: contain; display: block; }
+.estab-fallback { display: none; flex-direction: column; align-items: center; text-align: center; }
+.estab-fallback .h { font-size: 22px; color: var(--ink); line-height: 1; }
+.estab-fallback small { font-size: 11px; color: var(--grey-500); margin-top: 6px; }
+.fields { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.field { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--grey-200); border-top: 4px solid var(--red-600); padding: 26px 26px 28px; }
+.field:nth-child(2), .field:nth-child(3) { border-top-color: var(--ink); }
+.field-head { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+.field-num { font-family: "IBM Plex Mono", monospace; font-size: 26px; font-weight: 500; color: var(--red-600); line-height: 1.1; flex: none; }
+.field:nth-child(2) .field-num, .field:nth-child(3) .field-num { color: var(--ink); }
+.field h3 { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.01em; font-size: 16px; color: var(--ink); margin: 0; line-height: 1.2; }
+.field ul { margin: 0; padding: 0; list-style: none; }
+.field li { font-size: 14px; line-height: 1.4; color: var(--ink-600); padding: 9px 0; border-top: 1px solid var(--grey-200); }
+
+/* --- Contact (pied de page) ---------------------------------------------- */
+.contact { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
+.contact-disc { position: absolute; bottom: -120px; left: -80px; width: 340px; height: 340px; border-radius: 50%; background: var(--red-600); }
+.contact-inner { position: relative; max-width: var(--max); margin: 0 auto; padding: 56px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+.contact h2 { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.02em; font-size: 30px; color: var(--white); margin: 0; }
+.contact-coords { font-family: "IBM Plex Mono", monospace; font-size: 16px; color: #F7F7FF; margin: 14px 0 0; }
+.contact-coords a { color: inherit; text-decoration: none; }
+.contact-right { display: flex; flex-direction: column; gap: 16px; }
+.contact-rule { position: relative; height: 3px; width: 100%; background: rgba(255,255,255,.2); }
+.contact-rule span { position: absolute; top: 0; right: 0; width: 44px; height: 3px; background: var(--red-600); }
+
+/* =========================================================================
+   RESPONSIVE — tablette & mobile
+   ========================================================================= */
+
+/* Tablette */
+@media (max-width: 960px) {
+  .wrap, .nav, .hero-grid, .stats, .contact-inner { padding-left: 32px; padding-right: 32px; }
+  .hero-grid { grid-template-columns: 1fr; padding-top: 56px; }
+  .hero-text { padding-bottom: 40px; }
+  .hero-portrait { min-height: 0; order: -1; }
+  .hero-portrait img { height: 360px; }
+  .hero-disc { width: 300px; height: 300px; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .fields, .resp-grid { grid-template-columns: 1fr 1fr; }
+  .cards-3 { grid-template-columns: 1fr; }
+  .estabs { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  :root { --max: 100%; }
+  .wrap, .nav, .hero-grid, .stats, .contact-inner, .section { padding-left: 20px; padding-right: 20px; }
+  .section { padding-top: 44px; padding-bottom: 44px; }
+
+  /* Menu : on masque les liens, on montre le burger */
+  .nav-links {
+    position: fixed; top: 70px; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background: var(--white); border-bottom: 1px solid var(--grey-200);
+    padding: 8px 20px 16px; transform: translateY(-150%);
+    transition: transform .25s ease; box-shadow: 0 12px 24px rgba(0,0,0,.12);
+  }
+  .nav-links.open { transform: translateY(0); }
+  .nav-links a { padding: 12px 0; width: 100%; border-bottom: 1px solid var(--grey-200); font-size: 15px; }
+  .nav-cv { width: 100%; justify-content: center; margin-top: 10px; padding: 13px; }
+  .nav-burger { display: block; }
+
+  .hero h1 { font-size: 40px; }
+  .hero-bio { font-size: 17px; }
+  .hero-portrait img { height: 300px; }
+  .hero-disc { width: 240px; height: 240px; }
+
+  .stats { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .stat-num { font-size: 38px; }
+
+  .section-title { font-size: 28px; }
+  .cards-2, .cards-3, .fields, .resp-grid { grid-template-columns: 1fr; }
+  .estabs { grid-template-columns: 1fr 1fr; }
+
+  /* Listes en 2 lignes sur petit écran */
+  .pub, .comm { grid-template-columns: 1fr; gap: 6px; }
+  .pub-link, .comm-type { justify-self: start; }
+  .distinction { grid-template-columns: 1fr; gap: 4px; }
+
+  .contact-inner { padding: 40px 20px; }
+  .contact h2 { font-size: 24px; }
+}
+
+/* =========================================================================
+   IMPRESSION / EXPORT PDF
+   ========================================================================= */
+@media print {
+  @page { size: A4 portrait; margin: 12mm; }
+  body { background: #fff !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .nav { position: static !important; }
+  .nav-burger { display: none !important; }
+  .nav-links { position: static !important; transform: none !important; flex-direction: row !important; }
+  .diff-card:hover { transform: none; box-shadow: none; }
+  section, footer, article, .card, .diff-card, .resp, .field, .pub, .comm { break-inside: avoid; }
+}
