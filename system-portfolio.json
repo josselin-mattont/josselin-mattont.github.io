@@ -1,0 +1,39 @@
+{
+  "schema": "system-portfolio-1",
+  "updatedAt": "2026-08-28T21:04:48.000Z",
+  "items": [
+    {
+      "id": "hal-05246821",
+      "type": "publication",
+      "title": "« Combattre d’égale à égal » : féminités combattantes et féminisme pragmatique dans les sports de combat",
+      "date": "",
+      "organization": "Anthropologie et sociétés",
+      "url": "https://hal.science/hal-05246821v1",
+      "summary": "",
+      "doi": "10.7202/1114865ar",
+      "publicationKind": "article"
+    },
+    {
+      "id": "hal-05246824",
+      "type": "publication",
+      "title": "Ressentir la pratique du jiu-jitsu brésilien : une ethnographie sensorielle",
+      "date": "",
+      "organization": "Ethnologie française",
+      "url": "https://hal.science/hal-05246824v1",
+      "summary": "",
+      "doi": "10.3917/ethn.241.0021",
+      "publicationKind": "article"
+    },
+    {
+      "id": "hal-05246827",
+      "type": "publication",
+      "title": "La quête de virilité : une lutte en tout genre ?",
+      "date": "",
+      "organization": "STAPS : Revue internationale des sciences du sport et de l'éducation physique",
+      "url": "https://hal.science/hal-05246827v1",
+      "summary": "",
+      "doi": "10.3917/sta.pr1.0109",
+      "publicationKind": "article"
+    }
+  ]
+}
