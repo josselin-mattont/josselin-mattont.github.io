@@ -56,6 +56,7 @@
       .hero-disc { width:300px !important; height:300px !important; }
       .stats-grid { grid-template-columns:repeat(3,1fr) !important; gap:28px 32px !important; }
       .stat-cell { border-left:none !important; padding-left:0 !important; }
+      .map-grid { gap:12px !important; }
       .method-grid, .release-grid, .project-lead-grid, .bd-grid, .scientific-animation { grid-template-columns:1fr !important; gap:26px !important; }
       .method-cols { grid-template-columns:1fr !important; }
       .method-cols > div { padding:16px 0 !important; border-left:none !important; border-top:1px solid rgba(255,255,255,0.18) !important; }
@@ -86,6 +87,11 @@
       .axis-row { grid-template-columns:1fr !important; gap:12px !important; }
       .hours-row { grid-template-columns:1fr !important; gap:4px !important; }
       p, [style*="text-align:justify"], [style*="text-align: justify"] { text-align:left !important; }
+      .map-stem, .map-bar { display:none !important; }
+      .map-center { align-self:stretch !important; text-align:left !important; }
+      .map-grid { grid-template-columns:1fr !important; gap:0 !important; border-left:1.5px solid #000; margin-left:18px; padding-top:6px; }
+      .map-grid > div { display:grid !important; grid-template-columns:16px 34px 1fr; align-items:baseline; padding:8px 0 !important; text-align:left !important; }
+      .map-grid > div > .map-tick { width:16px !important; height:1.5px !important; margin:0 !important; align-self:center; }
       .timeline-line, .timeline-arrow { display:none !important; }
       .timeline-grid { grid-template-columns:1fr !important; border-left:2px solid #E1241A; padding-left:18px; }
       .timeline-grid > div { display:grid !important; grid-template-columns:30px 22px 1fr; align-items:center; gap:8px; padding:9px 0 !important; }
@@ -250,7 +256,7 @@
         <div class="stat-cell" style="border-left:1px solid #DCDCDF; padding-left:36px;"><div class="h stat-num" data-count="58" style="font-size:44px; color:#000; line-height:1;">58</div><span style="display:block; width:30px; height:3px; background:#E1241A; margin:12px 0;"></span><div class="k" style="font-size:10.5px; color:#1E1E22; line-height:1.5;">Mémoires encadrés · dont 21 en master</div></div>
         <div class="stat-cell" style="border-left:1px solid #DCDCDF; padding-left:36px;"><div class="h stat-num" data-count="23" style="font-size:44px; color:#000; line-height:1;">23</div><span style="display:block; width:30px; height:3px; background:#E1241A; margin:12px 0;"></span><div class="k" style="font-size:10.5px; color:#1E1E22; line-height:1.5;">Projets tutorés · dont 3 à portée internationale</div></div>
         <div class="stat-cell" style="border-left:1px solid #DCDCDF; padding-left:36px;"><div class="h stat-num" data-count="13" style="font-size:44px; color:#000; line-height:1;">13</div><span style="display:block; width:30px; height:3px; background:#E1241A; margin:12px 0;"></span><div class="k" style="font-size:10.5px; color:#1E1E22; line-height:1.5;">Communications · dont 2 internationales</div></div>
-        <div class="stat-cell" style="border-left:1px solid #DCDCDF; padding-left:36px;"><div class="h stat-num" data-count="4" data-pad="2" style="font-size:44px; color:#000; line-height:1;">04</div><span style="display:block; width:30px; height:3px; background:#E1241A; margin:12px 0;"></span><div class="k" style="font-size:10.5px; color:#1E1E22; line-height:1.5;">Articles publiés ou à paraître</div></div>
+        <div class="stat-cell" style="border-left:1px solid #DCDCDF; padding-left:36px;"><div class="h stat-num" data-count="5" data-pad="2" style="font-size:44px; color:#000; line-height:1;">05</div><span style="display:block; width:30px; height:3px; background:#E1241A; margin:12px 0;"></span><div class="k" style="font-size:10.5px; color:#1E1E22; line-height:1.5;">Articles publiés ou à paraître</div></div>
       </div>
     </div>
   </section>
@@ -259,43 +265,65 @@
   <section id="recherche" style="background:#fff; border-top:1px solid #DCDCDF; border-bottom:1px solid #DCDCDF;">
     <div style="max-width:1200px; margin:0 auto; padding:78px 56px;">
       <div class="k" style="display:inline-flex; align-items:center; gap:11px; font-size:13px; color:#B3170F; margin-bottom:16px;"><span style="width:36px; height:3px; background:currentColor;"></span>Axes de recherche</div>
-      <h2 class="h" style="font-size:44px; line-height:1.08; color:#000; margin:0 0 44px; max-width:24ch;">Une sociologie phénoménologique ancrée au sol des affrontements</h2>
+      <h2 class="h" style="font-size:44px; line-height:1.08; color:#000; margin:0 0 40px; max-width:24ch;">Une sociologie phénoménologique ancrée au sol des affrontements</h2>
 
-      <div style="display:flex; flex-direction:column; gap:0;">
-        <article class="axis-row" style="display:grid; grid-template-columns:110px 1fr; gap:36px; align-items:start; padding:34px 0; border-top:1px solid #DCDCDF;">
-          <div class="m" style="font-size:40px; color:#E1241A; line-height:1;">01</div>
-          <div>
-            <h3 class="k" style="font-size:14px; color:#000; margin:0 0 14px; line-height:1.5;">Corps, socialisation, violence et apprentissages</h3>
-            <p style="font-size:20px; line-height:1.5; margin:0; color:#34343B; max-width:60ch;">Comment des apprentissages incorporés transforment-ils les façons de sentir, d'agir et de donner sens à la violence ?</p>
-          </div>
-        </article>
-        <article class="axis-row" style="display:grid; grid-template-columns:110px 1fr; gap:36px; align-items:start; padding:34px 0; border-top:1px solid #DCDCDF;">
-          <div class="m" style="font-size:40px; color:#000; line-height:1;">02</div>
-          <div>
-            <h3 class="k" style="font-size:14px; color:#000; margin:0 0 14px; line-height:1.5;">Genre, masculinités, féminités et rapports sociaux de sexe</h3>
-            <p style="font-size:20px; line-height:1.5; margin:0; color:#34343B; max-width:60ch;">Comment les mondes combattants produisent-ils, négocient-ils ou déplacent-ils les rapports sociaux de sexe ?</p>
-          </div>
-        </article>
-        <article class="axis-row" style="display:grid; grid-template-columns:110px 1fr; gap:36px; align-items:start; padding:34px 0; border-top:1px solid #DCDCDF; border-bottom:1px solid #DCDCDF;">
-          <div class="m" style="font-size:40px; color:#E1241A; line-height:1;">03</div>
-          <div>
-            <h3 class="k" style="font-size:14px; color:#000; margin:0 0 14px; line-height:1.5;">Reconnaissance, mise en valeur et carrières</h3>
-            <p style="font-size:20px; line-height:1.5; margin:0; color:#34343B; max-width:60ch;">Comment un corps, une réputation ou une performance acquièrent-ils de la valeur — symbolique, sociale puis éventuellement économique ?</p>
-            <div style="margin-top:30px;">
-        <div class="k" style="font-size:10.5px; color:#5E5E66; margin-bottom:30px;">Une chaîne analytique, six seuils</div>
-        <div style="position:relative;">
-          <div class="timeline-line" aria-hidden="true" style="position:absolute; left:0; right:10px; top:35px; height:2px; background:#E1241A;"></div>
-          <div class="timeline-arrow" aria-hidden="true" style="position:absolute; right:0; top:31px; width:0; height:0; border-left:11px solid #E1241A; border-top:5px solid transparent; border-bottom:5px solid transparent;"></div>
-          <div class="timeline-grid" style="position:relative; display:grid; grid-template-columns:repeat(6,1fr);">
-            <div style="padding-right:18px;"><div class="m" style="font-size:12px; color:#B3170F; height:26px;">01</div><div style="height:20px; display:flex; align-items:center;"><span style="width:13px; height:13px; border-radius:50%; background:#E1241A;"></span></div><div class="k" style="font-size:10.5px; color:#000; margin-top:16px; line-height:1.45;">Reconnaissance</div></div>
-            <div style="padding-right:18px;"><div class="m" style="font-size:12px; color:#5E5E66; height:26px;">02</div><div style="height:20px; display:flex; align-items:center;"><span style="width:13px; height:13px; border-radius:50%; background:#000;"></span></div><div class="k" style="font-size:10.5px; color:#000; margin-top:40px; line-height:1.45;">Réputation</div></div>
-            <div style="padding-right:18px;"><div class="m" style="font-size:12px; color:#B3170F; height:26px;">03</div><div style="height:20px; display:flex; align-items:center;"><span style="width:13px; height:13px; border-radius:50%; background:#E1241A;"></span></div><div class="k" style="font-size:10.5px; color:#000; margin-top:16px; line-height:1.45;">Mise en valeur</div></div>
-            <div style="padding-right:18px;"><div class="m" style="font-size:12px; color:#5E5E66; height:26px;">04</div><div style="height:20px; display:flex; align-items:center;"><span style="width:13px; height:13px; border-radius:50%; background:#000;"></span></div><div class="k" style="font-size:10.5px; color:#000; margin-top:40px; line-height:1.45;">Conversion économique</div></div>
-            <div style="padding-right:18px;"><div class="m" style="font-size:12px; color:#B3170F; height:26px;">05</div><div style="height:20px; display:flex; align-items:center;"><span style="width:13px; height:13px; border-radius:50%; background:#E1241A;"></span></div><div class="k" style="font-size:10.5px; color:#000; margin-top:16px; line-height:1.45;">Professionnalisation</div></div>
-            <div><div class="m" style="font-size:12px; color:#5E5E66; height:26px;">06</div><div style="height:20px; display:flex; align-items:center;"><span style="width:13px; height:13px; border-radius:50%; background:#000;"></span></div><div class="k" style="font-size:10.5px; color:#000; margin-top:40px; line-height:1.45;">Maintien de la carrière</div></div>
-          </div>
+      <!-- Schéma global -->
+      <div aria-label="Un même terrain empirique, cinq entrées analytiques" role="img" style="display:flex; flex-direction:column; margin-bottom:52px;">
+        <div class="map-center" style="align-self:center; text-align:center; border:1.5px solid #000; padding:12px 26px;">
+          <div class="k" style="font-size:11px; color:#000; line-height:1.4;">Pratiques sportives et combattantes</div>
+          <div class="m" style="font-size:11.5px; color:#5E5E66; margin-top:4px;">comme terrain empirique</div>
+        </div>
+        <div class="map-stem" style="width:1.5px; height:18px; background:#000; margin:0 auto;"></div>
+        <div class="map-bar" style="height:1.5px; background:#000; margin:0 10%;"></div>
+        <div class="map-grid" style="display:grid; grid-template-columns:repeat(5,1fr); gap:20px;">
+          <div style="text-align:center;"><div class="map-tick" style="width:1.5px; height:16px; background:#000; margin:0 auto 10px;"></div><span class="m" style="font-size:12px; color:#B3170F;">01</span><div class="k" style="font-size:9.5px; letter-spacing:0.1em; color:#1E1E22; line-height:1.45; margin-top:6px;">Corps, socialisation et apprentissages incorporés</div></div>
+          <div style="text-align:center;"><div class="map-tick" style="width:1.5px; height:16px; background:#000; margin:0 auto 10px;"></div><span class="m" style="font-size:12px; color:#B3170F;">02</span><div class="k" style="font-size:9.5px; letter-spacing:0.1em; color:#1E1E22; line-height:1.45; margin-top:6px;">Violence, déviance, interaction et régulation des conduites</div></div>
+          <div style="text-align:center;"><div class="map-tick" style="width:1.5px; height:16px; background:#000; margin:0 auto 10px;"></div><span class="m" style="font-size:12px; color:#B3170F;">03</span><div class="k" style="font-size:9.5px; letter-spacing:0.1em; color:#1E1E22; line-height:1.45; margin-top:6px;">Genre, masculinités, féminités et rapports sociaux de sexe</div></div>
+          <div style="text-align:center;"><div class="map-tick" style="width:1.5px; height:16px; background:#000; margin:0 auto 10px;"></div><span class="m" style="font-size:12px; color:#B3170F;">04</span><div class="k" style="font-size:9.5px; letter-spacing:0.1em; color:#1E1E22; line-height:1.45; margin-top:6px;">Ethnographie, ethnobiographie, réflexivité et trajectoires</div></div>
+          <div style="text-align:center;"><div class="map-tick" style="width:1.5px; height:16px; background:#000; margin:0 auto 10px;"></div><span class="m" style="font-size:12px; color:#B3170F;">05</span><div class="k" style="font-size:9.5px; letter-spacing:0.1em; color:#1E1E22; line-height:1.45; margin-top:6px;">Sociologie économique, mise en valeur et carrières sportives</div></div>
         </div>
       </div>
+
+      <!-- Cinq axes homogènes -->
+      <div style="display:flex; flex-direction:column;">
+        <article class="axis-row" style="display:grid; grid-template-columns:110px 1fr; gap:36px; align-items:start; padding:32px 0; border-top:1px solid #DCDCDF;">
+          <div class="m" style="font-size:40px; color:#E1241A; line-height:1;">01</div>
+          <div>
+            <h3 class="k" style="font-size:14px; color:#000; margin:0 0 12px; line-height:1.5;">Corps, socialisation et apprentissages incorporés</h3>
+            <p style="font-size:20px; line-height:1.5; margin:0 0 12px; color:#34343B;">Comment normes, techniques et dispositions s'apprennent-elles, s'incorporent-elles et se transforment-elles dans l'expérience corporelle ?</p>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#5E5E66; max-width:72ch;">Analyse des processus par lesquels normes, techniques et dispositions s'apprennent, s'incorporent et se transforment dans l'expérience corporelle. Attention particulière aux dimensions sensibles de la socialisation et aux savoirs du corps.</p>
+          </div>
+        </article>
+        <article class="axis-row" style="display:grid; grid-template-columns:110px 1fr; gap:36px; align-items:start; padding:32px 0; border-top:1px solid #DCDCDF;">
+          <div class="m" style="font-size:40px; color:#000; line-height:1;">02</div>
+          <div>
+            <h3 class="k" style="font-size:14px; color:#000; margin:0 0 12px; line-height:1.5;">Violence, déviance, interaction et régulation des conduites</h3>
+            <p style="font-size:20px; line-height:1.5; margin:0 0 12px; color:#34343B;">Comment la violence est-elle qualifiée, redéfinie et régulée dans les interactions ?</p>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#5E5E66; max-width:72ch;">Étude des manières dont la violence est qualifiée, redéfinie et régulée dans l'interaction, ainsi que des processus de reconnaissance, de disqualification, de domination et de résistances ordinaires.</p>
+          </div>
+        </article>
+        <article class="axis-row" style="display:grid; grid-template-columns:110px 1fr; gap:36px; align-items:start; padding:32px 0; border-top:1px solid #DCDCDF;">
+          <div class="m" style="font-size:40px; color:#E1241A; line-height:1;">03</div>
+          <div>
+            <h3 class="k" style="font-size:14px; color:#000; margin:0 0 12px; line-height:1.5;">Genre, masculinités, féminités et rapports sociaux de sexe</h3>
+            <p style="font-size:20px; line-height:1.5; margin:0 0 12px; color:#34343B;">Comment les mondes combattants produisent-ils, mettent-ils à l'épreuve et transforment-ils les positions et rapports de genre ?</p>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#5E5E66; max-width:72ch;">Analyse de la fabrication et de la mise à l'épreuve des positions de genre dans les mondes du combat, des formes de féminité combattante, des masculinités et des effets de la position sexuée du chercheur.</p>
+          </div>
+        </article>
+        <article class="axis-row" style="display:grid; grid-template-columns:110px 1fr; gap:36px; align-items:start; padding:32px 0; border-top:1px solid #DCDCDF;">
+          <div class="m" style="font-size:40px; color:#000; line-height:1;">04</div>
+          <div>
+            <h3 class="k" style="font-size:14px; color:#000; margin:0 0 12px; line-height:1.5;">Ethnographie, ethnobiographie, réflexivité et trajectoires</h3>
+            <p style="font-size:20px; line-height:1.5; margin:0 0 12px; color:#34343B;">Que permet de saisir une enquête menée par corps et dans la durée sur les trajectoires étudiées et sur la position du chercheur ?</p>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#5E5E66; max-width:72ch;">Réflexion sur les conditions de l'enquête immersive, la place du corps du chercheur, les appartenances et loyautés de terrain, ainsi que sur l'articulation entre expériences biographiques, adversité, socialisation et recompositions de soi.</p>
+          </div>
+        </article>
+        <article class="axis-row" style="display:grid; grid-template-columns:110px 1fr; gap:36px; align-items:start; padding:32px 0; border-top:1px solid #DCDCDF; border-bottom:1px solid #DCDCDF;">
+          <div class="m" style="font-size:40px; color:#E1241A; line-height:1;">05</div>
+          <div>
+            <h3 class="k" style="font-size:14px; color:#000; margin:0 0 12px; line-height:1.5;">Sociologie économique, mise en valeur et carrières sportives</h3>
+            <p style="font-size:20px; line-height:1.5; margin:0 0 12px; color:#34343B;">Comment compétences corporelles, réputation et reconnaissance deviennent-elles des ressources pour construire et maintenir une carrière sportive ?</p>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#5E5E66; max-width:72ch;">Analyse des conditions dans lesquelles des compétences corporelles, une réputation et différentes formes de reconnaissance peuvent être mises en valeur, converties en ressources économiques et contribuer à la professionnalisation ou au maintien des carrières sportives.</p>
           </div>
         </article>
       </div>
@@ -306,7 +334,7 @@
           <div>
             <div class="k" style="font-size: 13px; color: #F03A2E; margin-bottom: 10px">Méthode</div>
             <h3 class="h" style="font-size:27px; color:#fff; margin:0 0 8px; line-height:1.1;">Une démarche d'enquête</h3>
-            <p class="b" style="font-size:14.5px; line-height:1.45; color:#9A9AA0; margin:0;">Le socle méthodologique transversal aux trois axes.</p>
+            <p class="b" style="font-size:14.5px; line-height:1.45; color:#9A9AA0; margin:0;">Le socle méthodologique transversal aux cinq axes.</p>
           </div>
           <div class="method-cols" style="display:grid; grid-template-columns:repeat(3,1fr); gap:0;">
             <div style="padding-right:22px;">
@@ -403,12 +431,13 @@
       <div style="display:flex; flex-direction:column; margin-bottom:52px;">
         <a href="https://shs.cairn.info/revue-staps-2026-4-page-7?lang=fr" target="_blank" rel="noopener" class="publication-row" style="display:grid; grid-template-columns:110px 1fr auto; gap:28px; align-items:baseline; padding:26px 0; border-top:1px solid #DCDCDF; text-decoration:none;"><span class="m" style="font-size:14px; color:#B3170F;">2026</span><span><span class="h" style="display:block; font-size:22px; color:#000; line-height:1.25;">La quête de virilité : une lutte en tout genre ? Une ethnographie de deux dojos de jiu-jitsu brésilien en France</span><span style="font-size:14.5px; color:#5E5E66;">Staps, 157(4), 7-25</span></span><span class="k" style="font-size:11px; color:#B3170F; white-space:nowrap;">Lire →</span></a>
         <a href="https://www.erudit.org/fr/revues/as/2024-v48-n2-as09706/1114865ar/" target="_blank" rel="noopener" class="publication-row" style="display:grid; grid-template-columns:110px 1fr auto; gap:28px; align-items:baseline; padding:26px 0; border-top:1px solid #DCDCDF; text-decoration:none;"><span class="m" style="font-size:14px; color:#B3170F;">2024</span><span><span class="h" style="display:block; font-size:22px; color:#000; line-height:1.25;">D'égale à égal : féminités combattantes et féminismes pragmatiques dans les sports de combat</span><span style="font-size:14.5px; color:#5E5E66;">Anthropologie &amp; Sociétés, 48(2), 121-139 — avec J. Beauchez</span></span><span class="k" style="font-size:11px; color:#B3170F; white-space:nowrap;">Lire →</span></a>
-        <a href="https://doi.org/10.3917/ethn.241.0021" target="_blank" rel="noopener" class="publication-row" style="display:grid; grid-template-columns:110px 1fr auto; gap:28px; align-items:baseline; padding:26px 0; border-top:1px solid #DCDCDF; border-bottom:1px solid #DCDCDF; text-decoration:none;"><span class="m" style="font-size:14px; color:#B3170F;">2024</span><span><span class="h" style="display:block; font-size:22px; color:#000; line-height:1.25;">Ressentir la pratique du jiu-jitsu brésilien : au cœur d'une ethnographie sensorielle</span><span style="font-size:14.5px; color:#5E5E66;">Ethnologie française, 54, 21-33</span></span><span class="k" style="font-size:11px; color:#B3170F; white-space:nowrap;">Lire →</span></a>
+        <a href="https://doi.org/10.3917/ethn.241.0021" target="_blank" rel="noopener" class="publication-row" style="display:grid; grid-template-columns:110px 1fr auto; gap:28px; align-items:baseline; padding:26px 0; border-top:1px solid #DCDCDF; border-bottom:1px solid #DCDCDF; text-decoration:none;"><span class="m" style="font-size:14px; color:#B3170F;">2024</span><span><span class="h" style="display:block; font-size:22px; color:#000; line-height:1.25;">Ressentir la pratique du jiu-jitsu brésilien : au cœur d'une ethnographie sensorielle</span><span style="font-size:14.5px; color:#5E5E66;">Ethnologie française, 54(1), 21-33</span></span><span class="k" style="font-size:11px; color:#B3170F; white-space:nowrap;">Lire →</span></a>
       </div>
 
       <div class="k" style="font-size:11px; color:#5E5E66; margin-bottom:16px;">À paraître</div>
       <div style="display:flex; flex-direction:column; margin-bottom:56px;">
-        <div class="publication-row" style="display:grid; grid-template-columns:110px 1fr auto; gap:28px; align-items:baseline; padding:22px 0; border-top:1px solid #DCDCDF; border-bottom:1px solid #DCDCDF;"><span class="m" style="font-size:14px; color:#9A9AA0;">à paraître</span><span><span class="h" style="display:block; font-size:20px; color:#000; line-height:1.25;">Mettre son genre à rude épreuve : réflexion épistémologique sur l'influence du genre en jiu-jitsu brésilien</span><span style="font-size:14.5px; color:#5E5E66;">Terrains &amp; Travaux</span></span><span class="k" style="font-size:10px; color:#1E1E22; background:#EAEAEC; padding:4px 9px; white-space:nowrap;">Accepté</span></div>
+        <div class="publication-row" style="display:grid; grid-template-columns:110px 1fr auto; gap:28px; align-items:baseline; padding:22px 0; border-top:1px solid #DCDCDF; border-bottom:1px solid #DCDCDF;"><span class="m" style="font-size:14px; color:#9A9AA0;">à paraître</span><span><span class="h" style="display:block; font-size:20px; color:#000; line-height:1.25;">Mettre son genre à rude épreuve : réflexion épistémologique sur l'influence du genre en jiu-jitsu brésilien</span><span style="font-size:14.5px; color:#5E5E66;">Terrains &amp; Travaux</span></span><span></span></div>
+        <div class="publication-row" style="display:grid; grid-template-columns:110px 1fr auto; gap:28px; align-items:baseline; padding:22px 0; border-bottom:1px solid #DCDCDF;"><span class="m" style="font-size:14px; color:#9A9AA0;">à paraître</span><span><span class="h" style="display:block; font-size:20px; color:#000; line-height:1.25;">Au cœur des « fabriques de combattants » : de la discipline au gouvernement des corps</span><span style="font-size:14.5px; color:#5E5E66;">SociologieS</span></span><span></span></div>
       </div>
 
       <div class="k" style="font-size:11px; color:#5E5E66; margin-bottom:20px;">Travaux en évaluation · projets éditoriaux</div>
